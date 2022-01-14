@@ -11,7 +11,7 @@ COPY ./ /myapp/
 WORKDIR /myapp/
 #COPY src /home/app/src
 #COPY pom.xml /home/app
-RUN mvn -f pom.xml clean package
+RUN mvn -f pom.xml clean package | grep -v warning
 WORKDIR /myapp/target/
 
 ##
